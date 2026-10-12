@@ -1,12 +1,12 @@
 # 私人仓库与换电脑使用
 
-项目位置：私人仓库 `Hann428/Clipto` 的 `txt翻页下载器/`，默认分支 `main`。不使用 `aws-project-from-md/` 作为本项目目录。
+项目位置：独立私人仓库 `Hann428/NovelTXT`，默认分支 `main`。这是个人项目；`Hann428/Clipto`只保存工作项目，本项目不得再同步到Clipto或其 `aws-project-from-md/` 子目录。
 
 ## 同步内容与本机数据
 
 源码、测试、构建脚本、必要工具、原图标素材、固定版本依赖、已修改的Novel-Get源码及许可证进入GitHub。`vendor/Novel-Get`作为普通源码目录保存，不依赖额外Git子模块。
 
-不上传 `.venv`、`dist`、`build`、WebView2 SDK二进制包、`data`、`evidence`、`logs`、小说TXT、`.novel-cache`、预备链接列表、账号Cookie、浏览器资料或密钥。`.gitignore`负责持续排除，提交前仍需核对实际暂存文件。原有其他项目不随本项目同步修改。
+不上传 `.venv`、`dist`、`build`、WebView2 SDK二进制包、`data`、`evidence`、`logs`、小说TXT、`.novel-cache`、预备链接列表、账号Cookie、浏览器资料或密钥。`.gitignore`负责持续排除，提交前仍需核对实际暂存文件。保持独立仓库的私有设置，不改变其他项目。
 
 这意味着在天津可以取回并修改代码，下载任务不会通过GitHub自动跨电脑续传。若要搬运已有小说和断点，请先在原电脑“停止并保存”并退出，再自行通过可信的本地方式复制“下载”或指定保存目录（包含隐藏的 `.novel-cache`）；浏览器资料不必复制，新电脑正常登录/手动验证即可。不要将这些目录提交GitHub。移动路径后重新选择实际保存目录，先核对缓存进度再开始。
 
@@ -14,9 +14,9 @@
 
 已验证技术栈为64位Windows、Python3.12（包含Tkinter）、Microsoft Edge WebView2 Runtime及Windows自带的.NET Framework编译器。内置浏览器当前只构建x64组件；其他平台未验证。
 
-1. 用有仓库权限的GitHub账号取回 `Hann428/Clipto`；可以克隆仓库或下载ZIP。建议使用Git克隆，后续方便拉取与提交。
+1. 用有仓库权限的GitHub账号取回 `Hann428/NovelTXT`；可以克隆仓库或下载ZIP。建议使用Git克隆，后续方便拉取与提交。
 2. 安装Python3.12 x64及Python Launcher。系统若没有WebView2 Runtime，先按微软官方说明安装。SDK是编译依赖，不能替代WebView2 Runtime。
-3. 在PowerShell中进入实际的 `Clipto\txt翻页下载器` 文件夹，按顺序执行：
+3. 在PowerShell中进入实际的 `NovelTXT` 仓库文件夹，按顺序执行：
 
 ```powershell
 py -3.12 -m venv .venv
@@ -41,7 +41,7 @@ git status --short
 git pull --ff-only
 ```
 
-在 `txt翻页下载器` 目录执行离线回归：
+在 `NovelTXT` 仓库根目录执行离线回归：
 
 ```powershell
 .\.venv\Scripts\python.exe -m pytest tests -q
@@ -55,10 +55,10 @@ powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\build.ps1 -Name NovelT
 
 结果位于 `dist\NovelTXT-v11-fix9`。使用或本地传输时保留整个文件夹，不要只复制EXE。构建产物继续留在本机，不提交集合仓库。若将来更换版本名，须同时更新启动脚本的首选版本与文档。
 
-提交时在集合仓库根目录检查仅本项目发生变化：
+提交时在独立仓库根目录检查暂存内容，先确认 `git remote -v` 指向 `Hann428/NovelTXT`：
 
 ```powershell
-git add -- "txt翻页下载器"
+git add -- .
 git diff --cached --stat
 git diff --cached --name-only
 git commit -m "Update novel TXT downloader"
