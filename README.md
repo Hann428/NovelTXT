@@ -2,7 +2,7 @@
 
 Windows 本地软件。批量加入小说目录链接，选择保存文件夹，将章节按目录顺序合并为 UTF-8 TXT。
 
-从私人GitHub仓库取回源码、在另一台Windows电脑配置和继续修改，见 [GITHUB_SYNC.md](GITHUB_SYNC.md)。仓库不包含EXE、运行环境、小说正文、下载断点或浏览器登录资料；首次需按说明配置Python与内置浏览器组件。
+从GitHub公开仓库取回源码、在另一台Windows电脑配置和继续修改，见 [GITHUB_SYNC.md](GITHUB_SYNC.md)。仓库不包含EXE、运行环境、小说正文、下载断点或浏览器登录资料；首次需按说明配置Python与内置浏览器组件。
 
 ## 启动
 

@@ -11,18 +11,18 @@
     },
     {
       "path": "AGENTS.md",
-      "bytes": 795,
-      "sha256": "1b820d17fdbd1213d874a319357f7482303a53e0f810b60de0dc587a18aa878b"
+      "bytes": 794,
+      "sha256": "840c16748aba9d0df23cf97ffb79565a08072ce792b78c832e91f99bdf508595"
     },
     {
       "path": "GITHUB_SYNC.md",
-      "bytes": 4724,
-      "sha256": "62590b0db297c3b30866d810609203d4f24ca572ac001704db7cdf9d129eb62f"
+      "bytes": 4715,
+      "sha256": "8f16f3f842dba89ce25bc2b2e3a0368b389ffedd9dbb6885d7eb1acb87134911"
     },
     {
       "path": "README.md",
-      "bytes": 20485,
-      "sha256": "392d171812f48ac65293d2923e0ad94c7b197d5a2558b1339c19879d762857d8"
+      "bytes": 20372,
+      "sha256": "610526139a279b14b3d973664c93315212a00251e1b2390e874e4cad90bdc06c"
     },
     {
       "path": "THIRD_PARTY.md",
