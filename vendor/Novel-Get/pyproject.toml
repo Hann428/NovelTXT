@@ -1,0 +1,45 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "novel-get"
+version = "0.1.0"
+description = "Site-independent novel downloader with pagination, resumable downloads, and integrity reports"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "beautifulsoup4>=4.13,<5",
+    "httpx>=0.28,<1",
+    "charset-normalizer>=3.4,<4",
+]
+
+[project.optional-dependencies]
+browser = ["playwright>=1.51,<2"]
+
+[dependency-groups]
+dev = ["pytest>=8,<10", "ruff>=0.4"]
+
+[project.scripts]
+novel-get = "novel_get.cli:main"
+
+[tool.setuptools]
+packages = ["novel_get", "novel_get.config"]
+
+[tool.setuptools.package-dir]
+novel_get = "src/novel_get"
+"novel_get.config" = "config"
+
+[tool.setuptools.package-data]
+"novel_get.config" = ["default.toml", "sites/*.toml"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 150
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I"]

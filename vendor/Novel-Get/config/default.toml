@@ -1,0 +1,5 @@
+[parser]
+toc_containers = "#list, #chapterlist, #js_cover_list, .directoryArea, .listmain, .chapter-list, .book-mulu, .mulu, dl, ul, ol"
+content_containers = "#chaptercontent, #content, #booktext, #BookText, #txt, .article-content, .read-content, .ReadAjax_content, .chapter-content, article"
+title_candidates = "h1, h2.chapter-title, .chapter-title, .chapter-page-info"
+remove_nodes = "script, style, noscript, iframe, nav, footer, button, select, input, .chapter-page-info, .ads, .ad, [hidden], [aria-hidden='true']"

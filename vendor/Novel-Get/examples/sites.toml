@@ -1,0 +1,30 @@
+# 复制到 config/sites/ 下即可自动加载，也可用 --config 指定路径。
+#
+# 必填：
+#   domains            域名数组，精确匹配 "example.com"，通配 "*.example.com"（含各级子域名）
+#
+# 可选选择器（CSS 语法，留空则走通用自动识别）：
+#   toc_selector           目录页：章节链接的 <a> 元素
+#   toc_next_selector      目录页：翻页的 <a> 或 <option> 元素
+#   content_selector       正文页：正文内容容器
+#   title_selector         正文页：章节标题元素
+#   next_page_selector     正文页：章内"下一页"链接（分页章节用）
+#   next_chapter_selector  正文页："下一章"链接
+#   remove_selector        正文页：需要删除的节点（广告、导航等）
+#
+# 规则覆盖优先级：内置默认 → config/sites/*.toml（按文件名排序）→ --config 参数（按顺序）
+
+[sites.my_site]
+domains = ["example.com", "*.example.com"]
+toc_selector = ".chapter-list a[href]"
+toc_next_selector = ".pagination a.next"
+content_selector = "#chapter-content"
+title_selector = "h1"
+next_page_selector = "a.next-page"
+next_chapter_selector = "a.next-chapter"
+remove_selector = ".advertisement, .reader-controls"
+
+# 精确域名优先于通配域名；只需写和上面不同的字段
+[sites.my_site_mobile]
+domains = ["m.example.com"]
+content_selector = ".mobile-content"
